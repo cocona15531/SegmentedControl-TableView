@@ -36,6 +36,9 @@
                                     <segment title="履歴"/>
                                     <segment title="ピン留め"/>
                                 </segments>
+                                <connections>
+                                    <action selector="selectedSegment:" destination="BYZ-38-t0r" eventType="valueChanged" id="HTm-m3-5Rg"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -51,6 +54,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="eUf-lk-yfz"/>
+                    <connections>
+                        <outlet property="segmentControl" destination="gJP-1W-ExQ" id="lnM-X8-mva"/>
+                        <outlet property="tableView" destination="efD-1F-PfL" id="lY5-J7-Gwa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
