@@ -30,8 +30,10 @@ extension ViewController: UITableViewDataSource {
         let segmentIndex = segmentControl.selectedSegmentIndex
         switch segmentIndex {
         case 0:
+            //通常の履歴をここに表示させる
             cell.textLabel?.text = segmentControl.titleForSegment(at: segmentIndex)
         case 1:
+            //タグがついている項目だけここに表示させる
             cell.textLabel?.text = segmentControl.titleForSegment(at: segmentIndex)
         default:
             return UITableViewCell()
