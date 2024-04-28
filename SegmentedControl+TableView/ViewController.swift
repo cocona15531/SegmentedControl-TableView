@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func selectedSegment(_ sender: Any) {
+        tableView.reloadData()
     }
     
 }
@@ -26,7 +27,15 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "\(indexPath.row)"
+        let segmentIndex = segmentControl.selectedSegmentIndex
+        switch segmentIndex {
+        case 0:
+            cell.textLabel?.text = segmentControl.titleForSegment(at: segmentIndex)
+        case 1:
+            cell.textLabel?.text = segmentControl.titleForSegment(at: segmentIndex)
+        default:
+            return UITableViewCell()
+        }
         return cell
     }
     
